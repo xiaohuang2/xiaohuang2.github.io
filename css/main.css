@@ -1250,7 +1250,7 @@ img:hover {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #46ff13;
+  background: #55fa1c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2647,7 +2647,15 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
-  background-size: 100% 100%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+/*这是设置底部文字, 看个人需要修改*/
+}
+body #footer > div > div {
+  color: #eee;
 }
 .content-wrap {
   opacity: 0.8;
