@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>蕾姆这么可爱，你们不要我就抱走了哈</title>
+    <url>/2021/05/04/%E8%95%BE%E5%A7%86%E8%BF%99%E4%B9%88%E5%8F%AF%E7%88%B1%EF%BC%8C%E4%BD%A0%E4%BB%AC%E4%B8%8D%E8%A6%81%E6%88%91%E5%B0%B1%E6%8A%B1%E8%B5%B0%E4%BA%86%E5%93%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>蕾姆这么好看，这么cute，你们竟然都不要，那我可就抱走啦~~~<span id="more"></span></p>
+<p><img src="https://z3.ax1x.com/2021/05/04/gnonQe.png" alt="gnonQe.png"><br><img src="https://z3.ax1x.com/2021/05/04/gnoEi6.jpg" alt="gnoEi6.jpg"><br><img src="https://z3.ax1x.com/2021/05/04/gnousH.png" alt="gnousH.png"><br><img src="https://z3.ax1x.com/2021/05/04/gnoFd1.jpg" alt="gnoFd1.jpg"><br><img src="https://z3.ax1x.com/2021/05/04/gnoKLd.jpg" alt="gnoKLd.jpg"></p>
+<p><img src="https://z3.ax1x.com/2021/05/04/gnHrFI.jpg" alt="gnHrFI.jpg"><br><img src="https://z3.ax1x.com/2021/05/04/gnHBTA.jpg" alt="gnHBTA.jpg"><br><img src="https://z3.ax1x.com/2021/05/04/gnHyfP.jpg" alt="gnHyfP.jpg"><br><img src="https://z3.ax1x.com/2021/05/04/gnHcSf.png" alt="gnHcSf.png"><br><img src="https://z3.ax1x.com/2021/05/04/gnHsYt.png" alt="gnHsYt.png"></p>
+]]></content>
+      <categories>
+        <category>眼保健操</category>
+      </categories>
+      <tags>
+        <tag>爱了爱了</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记用hexo在Windows下搭建我的个人博客</title>
+    <url>/2021/03/26/%E8%AE%B0%E7%94%A8hexo%E5%9C%A8Windows%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此为xiaohuang2人生中第一个个人blog网站，使用hexo搭建，之后会继续完善。接下来记录一下搭建的艰辛全过程（滑稽）<span id="more"></span></p>
+<h2 id="一、安装git，nodejs"><a href="#一、安装git，nodejs" class="headerlink" title="一、安装git，nodejs"></a>一、安装git，nodejs</h2><p><img src="https://z3.ax1x.com/2021/03/26/6vomA1.png" alt="git bash"></p>
+<p>两个安装程序均可到官网下载，也可到这里：</p>
+<p><a href="https://pan.baidu.com/s/10zvxLkR-dcIvIrF0HNq_zQ">https://pan.baidu.com/s/10zvxLkR-dcIvIrF0HNq_zQ</a>     提取码：gfgi</p>
+<p>选好安装目录就行，其他选项默认。</p>
+<p>安装完后可以在cmd里执行：</p>
+<p><code>node -v</code></p>
+<p><code>npm -v</code></p>
+<p>显示了版本号即安装成功。</p>
+<h2 id="二、在blog文件夹下打开git-bash"><a href="#二、在blog文件夹下打开git-bash" class="headerlink" title="二、在blog文件夹下打开git bash"></a>二、在blog文件夹下打开git bash</h2><p>在此电脑下创建一个放博客文件的文件夹，比如我在E盘下创建一个名为xiaohuangblog的文件夹。</p>
+<p><img src="https://z3.ax1x.com/2021/03/26/6vontx.png" alt="blog 文件夹"></p>
+<p>右击文件夹点git bash here打开git bash命令行。</p>
+<p><img src="https://z3.ax1x.com/2021/03/26/6voGBd.png" alt="点击git bash"></p>
+<p>按住ctrl按+或-放大缩小字号，调到一个合适自己的大小。</p>
+<p><img src="https://z3.ax1x.com/2021/03/26/6voM9K.png" alt="git bash命令行"></p>
+<h2 id="三、安装并初始化hexo"><a href="#三、安装并初始化hexo" class="headerlink" title="三、安装并初始化hexo"></a>三、安装并初始化hexo</h2><p>在git bash中输入命令：</p>
+<p><code>npm install hexo-cli -g</code></p>
+<p>安装完成后输入：</p>
+<p><code>hexo -v</code></p>
+<p>如出现版本号则安装成功。</p>
+<p>输入命令：</p>
+<p><code>hexo init</code></p>
+<p><code>npm install</code></p>
+<p>至此，hexo本地就安装完成了。</p>
+<h2 id="四、启动你的本地hexo博客"><a href="#四、启动你的本地hexo博客" class="headerlink" title="四、启动你的本地hexo博客"></a>四、启动你的本地hexo博客</h2><p>在命令行输入：</p>
+<p><code>hexo g</code></p>
+<p>完成后输入：</p>
+<p><code>hexo s</code></p>
+<p>用此命令启动本地服务。</p>
+<p><img src="https://z3.ax1x.com/2021/03/26/6vouh6.png" alt="hexo g"></p>
+<p><img src="https://z3.ax1x.com/2021/03/26/6voQ1O.png" alt="hexo s"></p>
+<p>这样之后在浏览器网址里输入：</p>
+<p>localhost:4000（冒号是英文的）</p>
+<p>即可看到你的hexo博客，以及一篇自带的hello world文章。</p>
+<p><img src="https://z3.ax1x.com/2021/03/26/6vo1je.png" alt="浏览器里显示"></p>
+<p>以上是我经过一点点修改的博客界面，之后会继续教大家修改主题，自定义界面，写文章等玩法，帮你的博客看上去更美观。</p>
+<p>没有遥遥领先，只有互相学习。</p>
+<p>———————————————————-End———————————————————-</p>
+]]></content>
+      <categories>
+        <category>我的博客发展历程</category>
+      </categories>
+      <tags>
+        <tag>喜悦</tag>
+      </tags>
+  </entry>
+</search>
