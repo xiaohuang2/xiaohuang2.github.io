@@ -1250,7 +1250,7 @@ img:hover {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #df33ff;
+  background: #ff462b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2758,14 +2758,11 @@ body #footer > div > div {
   color: #eee;
 }
 .content-wrap {
-  opacity: 0.8;
+  opacity: 1;
 }
 .sidebar {
   opacity: 0.8;
 }
 .header-inner {
   background: rgba(255,255,255,0.8);
-}
-.popup {
-  opacity: 0.8;
 }
