@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>更改主题及样式并部署到gitee上</title>
+    <url>/2021/05/15/%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0gitee%E4%B8%8A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>搭建好本地博客之后，我们要做到就是让它变得好看一点。那么就要用到hexo的主题和样式的功能了。想让别人也能看到你的blog，就需要将其部署到像github，gitee等代码托管平台。话不多说，冲冲冲！<span id="more"></span></p>
+<h2 id="一、下载主题"><a href="#一、下载主题" class="headerlink" title="一、下载主题"></a>一、下载主题</h2><p>在网上有很多专用于hexo的主题，很漂亮，我这里用的是比较强大的next主题。其他主题大同小异（当然对于没有基础的人来说，还是用next主题比较好，网上教程比较多）。</p>
+<p>在<a href="https://github.com/theme-next/hexo-theme-next%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98%E5%B9%B6%E5%B0%86%E5%8E%8B%E7%BC%A9%E5%8C%85%E8%A7%A3%E5%8E%8B%E5%88%B0%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84themes%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%EF%BC%8C%E5%B0%86%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E6%94%B9%E4%B8%BAnext%E3%80%82%E6%88%96%E8%80%85%E7%9B%B4%E6%8E%A5%E5%9C%A8%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A7%E8%A1%8Cgit%E5%91%BD%E4%BB%A4%E5%8D%B3%E5%8F%AF%EF%BC%9A">https://github.com/theme-next/hexo-theme-next下载主题并将压缩包解压到根目录下的themes文件夹下，将文件夹名改为next。或者直接在根目录执行git命令即可：</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>然后你会发现，themes文件夹下会出现一个next文件夹。<img src="https://www.hualigs.cn/image/609f37c51bf11.jpg"></p>
+<h2 id="二、大致了解hexo根目录结构"><a href="#二、大致了解hexo根目录结构" class="headerlink" title="二、大致了解hexo根目录结构"></a>二、大致了解hexo根目录结构</h2><p>hexo搭建好后的根目录里会有很多文件及文件夹，它们各司其职，组成一个完整的结构。那么它们分别都是什么呢？我大致跟读者说一些主要的文件。</p>
+<h3 id="站点配置文件"><a href="#站点配置文件" class="headerlink" title="站点配置文件"></a>站点配置文件</h3><p>根目录下有一个名为_config.yml的文件，这是站点的配置文件。配置主题，和其他的一些功能，都在这里面。<img src="https://www.hualigs.cn/image/609f37c520dd3.jpg"></p>
+<h3 id="主题配置文件"><a href="#主题配置文件" class="headerlink" title="主题配置文件"></a>主题配置文件</h3><p>themes/next文件夹下也有一个名为_config.yml的文件，我们叫它主题配置文件。主要管理样式或者其他的一些东西。<img src="https://www.hualigs.cn/image/609f3bbb8974d.jpg"></p>
+<h3 id="其他的文件夹"><a href="#其他的文件夹" class="headerlink" title="其他的文件夹"></a>其他的文件夹</h3><p>node_modules文件夹里存放着各种依赖包；</p>
+<p>scaffolds文件夹用于存放模板，包括页面、要发布的文章、草稿三种模板；</p>
+<p>source文件夹，顾名思义，就是资源文件夹，里面存放有博客的.md文件，图片，各种页面等。</p>
+<h2 id="三、设置主题及样式"><a href="#三、设置主题及样式" class="headerlink" title="三、设置主题及样式"></a>三、设置主题及样式</h2><p>打开根目录下的_config.yml文件，ctrl+f快捷键搜索theme，找到这一行，将冒号后面改为next（注意冒号后面一定一定要有一个空格，否则会出错！）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.hualigs.cn/image/609f37c54531f.jpg">我使用的编辑器是vs code，读者也可选用其他编辑器，如nodepad++。</p>
+<p>打开themes/next下的_config.yml文件，搜索scheme，有四种样式可供选择，想要哪种就把前面的“#”去掉即可。如我这里选用Gemini：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="symbol">scheme:</span> Gemini</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.hualigs.cn/image/609f37c522202.jpg"></p>
+<h2 id="四、部署到gitee上"><a href="#四、部署到gitee上" class="headerlink" title="四、部署到gitee上"></a>四、部署到gitee上</h2><p>其实github是比较好的选择，但最近有些线路受到污染，而且国外网站访问速度欠佳，所以我选择了国内的gitee。</p>
+<h3 id="1、注册账号并新建仓库"><a href="#1、注册账号并新建仓库" class="headerlink" title="1、注册账号并新建仓库"></a>1、注册账号并新建仓库</h3><p>在gitee注册一个账号，用户名最好用英文字母加数字。点击右上角加号新建仓库。仓库名称和路径两个地方填上你的用户名就行。<img src="https://www.hualigs.cn/image/609f37c5249a5.jpg"></p>
+<p><img src="https://www.hualigs.cn/image/609f37c53f2b7.jpg">按我这样配置之后，单击创建（因为我已经创建过一个同名的仓库了，所以无法创建)。</p>
+<h3 id="2、安装部署插件"><a href="#2、安装部署插件" class="headerlink" title="2、安装部署插件"></a>2、安装部署插件</h3><p>在根目录的git里执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>复制仓库地址，即打开你的仓库后的网址。<img src="https://www.hualigs.cn/image/609f37c54dbf8.jpg"></p>
+<p>打开站点配置文件，拉到最底部，将其改为：</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="symbol">deploy:</span></span><br><span class="line">  <span class="symbol">type:</span> git</span><br><span class="line">  <span class="symbol">repo:</span> 你刚刚复制的仓库地址</span><br><span class="line">  <span class="symbol">branch:</span> master	</span><br></pre></td></tr></table></figure>
+
+<p>（ps：注意冒号后面都要有一个空格）</p>
+<p>如下图是我修改好的：</p>
+<p><img src="https://www.hualigs.cn/image/609f37c52f2c4.jpg"></p>
+<h3 id="3、打开pages服务并部署"><a href="#3、打开pages服务并部署" class="headerlink" title="3、打开pages服务并部署"></a>3、打开pages服务并部署</h3><p>仓库主页上方菜单栏里点击“服务”里的“Gitee Pages”，勾选“强制使用https”，点击启动即可。<img src="https://www.hualigs.cn/image/609f37c53979d.jpg"></p>
+<p>在根目录git里输入三个命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="comment">#清除缓存</span></span><br><span class="line">hexo g </span><br><span class="line">hexo d <span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
+
+<p>再回到pages服务页面，更新服务。因为gitee pages不支持自动更新，所以每次都要手动更新。</p>
+<h3 id="4、访问你的小站"><a href="#4、访问你的小站" class="headerlink" title="4、访问你的小站"></a>4、访问你的小站</h3><p>在浏览器输入网址”你的用户名.gitee.io”即可。</p>
+]]></content>
+      <categories>
+        <category>我的博客发展历程</category>
+      </categories>
+      <tags>
+        <tag>折腾</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>蕾姆这么可爱，你们不要我就抱走了哈</title>
     <url>/2021/05/04/%E8%95%BE%E5%A7%86%E8%BF%99%E4%B9%88%E5%8F%AF%E7%88%B1%EF%BC%8C%E4%BD%A0%E4%BB%AC%E4%B8%8D%E8%A6%81%E6%88%91%E5%B0%B1%E6%8A%B1%E8%B5%B0%E4%BA%86%E5%93%88/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>蕾姆这么好看，这么cute，你们竟然都不要，那我可就抱走啦~~~<span id="more"></span></p>
