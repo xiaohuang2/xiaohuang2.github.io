@@ -565,35 +565,6 @@ window.addEventListener('pjax:success', () => {
 
   
 
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.3.4/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'A6suQzntn6IT9SYWRKa6fALJ-gzGzoHsz',
-      appKey     : 'H5bfbQEv2mPqitKfXilt2BIF',
-      placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
-      avatar     : 'monsterid',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
-</script>
-
     </div>
   
   <script type="text/javascript" src="/js/love.js"></script>
