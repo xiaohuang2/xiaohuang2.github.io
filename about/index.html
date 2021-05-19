@@ -224,7 +224,7 @@
 <h2 id="3、博主搭建此blog的目的？"><a href="#3、博主搭建此blog的目的？" class="headerlink" title="3、博主搭建此blog的目的？"></a>3、博主搭建此blog的目的？</h2><p>记录平时生活中鼓捣技术时遇到的一些琐事，方便回头观望，找到前进的动力。</p>
 <h2 id="4、这个网站会一直在吗？"><a href="#4、这个网站会一直在吗？" class="headerlink" title="4、这个网站会一直在吗？"></a>4、这个网站会一直在吗？</h2><p>当然，只要我活着，而且以后会越做越好。也是个不断学习的过程嘛。</p>
 <h2 id="5、如何找到-联系博主？"><a href="#5、如何找到-联系博主？" class="headerlink" title="5、如何找到/联系博主？"></a>5、如何找到/联系博主？</h2><p>有问题请发邮件到</p>
-<p><a href="mailto:&#97;&#115;&#100;&#x66;&#103;&#116;&#x72;&#101;&#x77;&#x71;&#x31;&#x32;&#x33;&#x34;&#53;&#x40;&#121;&#x65;&#97;&#x68;&#x2e;&#110;&#x65;&#x74;">&#97;&#115;&#100;&#x66;&#103;&#116;&#x72;&#101;&#x77;&#x71;&#x31;&#x32;&#x33;&#x34;&#53;&#x40;&#121;&#x65;&#97;&#x68;&#x2e;&#110;&#x65;&#x74;</a></p>
+<p><a href="mailto:&#97;&#115;&#x64;&#x66;&#103;&#x74;&#114;&#101;&#119;&#113;&#49;&#x32;&#x33;&#52;&#53;&#x40;&#121;&#101;&#x61;&#x68;&#x2e;&#110;&#101;&#116;">&#97;&#115;&#x64;&#x66;&#103;&#x74;&#114;&#101;&#119;&#113;&#49;&#x32;&#x33;&#52;&#53;&#x40;&#121;&#101;&#x61;&#x68;&#x2e;&#110;&#101;&#116;</a></p>
 <p>不定时查看邮箱。</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2>
       </div>
@@ -413,6 +413,92 @@
 
 
 
+<script data-pjax>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"ddpfNxJr8S1YbKrjeIyV2KRm-gzGzoHsz","app_key":"mpgA5cwKeKEGtaVetfvpXXJM","server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
