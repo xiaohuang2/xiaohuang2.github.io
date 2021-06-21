@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>准备再踏上视频制作之路</title>
+    <url>/2021/06/21/%E5%87%86%E5%A4%87%E5%86%8D%E8%B8%8F%E4%B8%8A%E8%A7%86%E9%A2%91%E5%88%B6%E4%BD%9C%E4%B9%8B%E8%B7%AF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>暑假马上就要到了，两个月的超长假期。我准备重操旧业，再次开始视频制作。一切准备就绪！<span id="more"></span></p>
+<h2 id="一、设备"><a href="#一、设备" class="headerlink" title="一、设备"></a>一、设备</h2><p>我才初一呢是不是，设备不需要太多。一台电脑，一台ok的麦克风就行了。以后可以考虑弄个相机拍一拍vlog什么的。电脑配置也不高，pr勉强带得动，先将就着吧。</p>
+<h2 id="二、软件"><a href="#二、软件" class="headerlink" title="二、软件"></a>二、软件</h2><p>软件算是准备妥当了，先是下了cc，再用GenP破解了，装了三个，pr、ps、ae，还是小白，慢慢学嘛。一开始装ae的时候c盘突然红了，赶紧调了下安装目录，要知道我家从没有哪个盘红过（滑稽）。pr、ps之前用过，基本操作还是可以的，但ae纯新手，就上b站学一学了。白嫖Adobe真是太爽了(doge)</p>
+<h2 id="三、心态"><a href="#三、心态" class="headerlink" title="三、心态"></a>三、心态</h2><p>就up主这个东西啊，一个良好的心态还是很重要的，不能对着屏幕说不出话来，当然在正式开拍之前要写稿子的。</p>
+<h1 id="只是来这儿做个汇报，祝我成功！"><a href="#只是来这儿做个汇报，祝我成功！" class="headerlink" title="只是来这儿做个汇报，祝我成功！"></a>只是来这儿做个汇报，祝我成功！</h1>]]></content>
+      <categories>
+        <category>视频制作历程</category>
+      </categories>
+      <tags>
+        <tag>折腾</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>更改主题及样式并部署到gitee上</title>
     <url>/2021/05/15/%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0gitee%E4%B8%8A/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>搭建好本地博客之后，我们要做到就是让它变得好看一点。那么就要用到hexo的主题和样式的功能了。想让别人也能看到你的blog，就需要将其部署到像github，gitee等代码托管平台。话不多说，冲冲冲！<span id="more"></span></p>
@@ -51,6 +66,26 @@
       </tags>
   </entry>
   <entry>
+    <title>蕾姆这么可爱，你们不要我就抱走了哈</title>
+    <url>/2021/05/04/%E8%95%BE%E5%A7%86%E8%BF%99%E4%B9%88%E5%8F%AF%E7%88%B1%EF%BC%8C%E4%BD%A0%E4%BB%AC%E4%B8%8D%E8%A6%81%E6%88%91%E5%B0%B1%E6%8A%B1%E8%B5%B0%E4%BA%86%E5%93%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>蕾姆这么好看，这么cute，你们竟然都不要，那我可就抱走啦~~~<span id="more"></span></p>
+<p><img src="https://www.hualigs.cn/image/60968ff845d57.jpg"><img src="https://www.hualigs.cn/image/60968ff43fee1.jpg"><img src="https://www.hualigs.cn/image/60968ff87acad.jpg"></p>
+<p><img src="https://www.hualigs.cn/image/60968ff38ce27.jpg"></p>
+<p><img src="https://www.hualigs.cn/image/60968ff3ac8ca.jpg"></p>
+<p><img src="https://www.hualigs.cn/image/60968ff4c3050.jpg"></p>
+<p><img src="https://www.hualigs.cn/image/60968ff435856.jpg"></p>
+<p><img src="https://www.hualigs.cn/image/60968ff5bfcbd.jpg"></p>
+<p><img src="https://www.hualigs.cn/image/60968ff73ca82.jpg"></p>
+<p><img src="https://www.hualigs.cn/image/60968ff5d1f67.jpg"></p>
+]]></content>
+      <categories>
+        <category>眼保健操</category>
+      </categories>
+      <tags>
+        <tag>爱了爱了</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>记用hexo在Windows下搭建我的个人博客</title>
     <url>/2021/03/26/%E8%AE%B0%E7%94%A8hexo%E5%9C%A8Windows%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此为xiaohuang2人生中第一个个人blog网站，使用hexo搭建，之后会继续完善。接下来记录一下搭建的艰辛全过程（滑稽）<span id="more"></span></p>
@@ -96,26 +131,6 @@
       </categories>
       <tags>
         <tag>折腾</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>蕾姆这么可爱，你们不要我就抱走了哈</title>
-    <url>/2021/05/04/%E8%95%BE%E5%A7%86%E8%BF%99%E4%B9%88%E5%8F%AF%E7%88%B1%EF%BC%8C%E4%BD%A0%E4%BB%AC%E4%B8%8D%E8%A6%81%E6%88%91%E5%B0%B1%E6%8A%B1%E8%B5%B0%E4%BA%86%E5%93%88/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>蕾姆这么好看，这么cute，你们竟然都不要，那我可就抱走啦~~~<span id="more"></span></p>
-<p><img src="https://www.hualigs.cn/image/60968ff845d57.jpg"><img src="https://www.hualigs.cn/image/60968ff43fee1.jpg"><img src="https://www.hualigs.cn/image/60968ff87acad.jpg"></p>
-<p><img src="https://www.hualigs.cn/image/60968ff38ce27.jpg"></p>
-<p><img src="https://www.hualigs.cn/image/60968ff3ac8ca.jpg"></p>
-<p><img src="https://www.hualigs.cn/image/60968ff4c3050.jpg"></p>
-<p><img src="https://www.hualigs.cn/image/60968ff435856.jpg"></p>
-<p><img src="https://www.hualigs.cn/image/60968ff5bfcbd.jpg"></p>
-<p><img src="https://www.hualigs.cn/image/60968ff73ca82.jpg"></p>
-<p><img src="https://www.hualigs.cn/image/60968ff5d1f67.jpg"></p>
-]]></content>
-      <categories>
-        <category>眼保健操</category>
-      </categories>
-      <tags>
-        <tag>爱了爱了</tag>
       </tags>
   </entry>
 </search>
