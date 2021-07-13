@@ -44,8 +44,8 @@
 <h3 id="2、安装部署插件"><a href="#2、安装部署插件" class="headerlink" title="2、安装部署插件"></a>2、安装部署插件</h3><p>在根目录的git里执行：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
 
-<p>复制仓库地址，即打开你的仓库后的网址。<img src="https://www.hualigs.cn/image/609f37c54dbf8.jpg"></p>
-<p>打开站点配置文件，拉到最底部，将其改为：</p>
+<p>复制仓库地址，先在仓库这里选择“克隆/下载”，复制下来https地址。<img src="https://www.hualigs.cn/image/60ed59438e26e.jpg"></p>
+<p><img src="https://www.hualigs.cn/image/60ed59438f670.jpg">打开站点配置文件，拉到最底部，将其改为：</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="symbol">deploy:</span></span><br><span class="line">  <span class="symbol">type:</span> git</span><br><span class="line">  <span class="symbol">repo:</span> 你刚刚复制的仓库地址</span><br><span class="line">  <span class="symbol">branch:</span> master	</span><br></pre></td></tr></table></figure>
 
 <p>（ps：注意冒号后面都要有一个空格）</p>
