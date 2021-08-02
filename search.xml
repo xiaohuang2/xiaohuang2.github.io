@@ -133,4 +133,254 @@
         <tag>折腾</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Metasploit快速入门（一）</title>
+    <url>/2021/08/03/Metasploit%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文转载自知乎，个人感觉写的不错，解决了我的很多问题</p>
+<p>原创：合天网安实验室合天智汇</p>
+<p>在本章中，我们将会学习以下内容：</p>
+<p>1、在Windows上安装Metasploit</p>
+<p>2、在Linux和MacOS上安装Metasploit</p>
+<p>3、在Kali Linux中使用 Metasploit</p>
+<p>4、升级Kali Linux</p>
+<p>5、使用虚拟化软件构建渗透测试实验环境</p>
+<p>6、配置SSH连接</p>
+<p>7、使用SSH连接Kali</p>
+<p>8、配置PostgreSQL数据库</p>
+<p>9、创建工作区</p>
+<p>10、使用数据库</p>
+<p>11、使用hosts命令</p>
+<p>12、理解services命令</p>
+<p><img src="https://pic2.zhimg.com/80/v2-115843caf11faab3c5dc4451667fa421_720w.jpg" alt="img"></p>
+<p><strong>简介</strong></p>
+<p>Metasploit是目前世界上领先的渗透测试工具，也是信息安全与渗透测试领域最大的开源项目之一。它彻底改变了我们执行安全测试的方式。</p>
+<p>Metasploit之所以流行，是因为它可以执行广泛的安全测试任务，从而简化渗透测试的工作。Metasploit适用于所有流行的操作系统，本书中，主要以Kali Linux为主。因为Kali Linux预装了 Metasploit 框架和运行在框架上的其他第三方工具。</p>
+<p><strong>框架和相关术语简介：</strong></p>
+<p><strong>Metasploit Framework</strong>：这是一个免费的、开源的渗透测试框架，由 H.D.Moore 在 2003 年发布，后来被 Rapid7 收购。当前稳定版本是使用 Ruby 语言编写的。它拥有世界上最大的渗透测试攻击数据库，每年超过100万次的下载。它也是迄今为止使用 Ruby构建的最复杂的项目之一。</p>
+<p><strong>Vulnerability</strong>：允许攻击者入侵或危害系统安全性的弱点称为漏洞，漏洞可能存在于操作系统，应用软件甚至网络协议中。</p>
+<p><strong>Exploit</strong>：攻击代码或程序，它允许攻击者利用易受攻击的系统并危害其安全性。每个漏洞都有对应的漏洞利用程序。Metasploit有超过 1700 个漏洞利用程序。</p>
+<p><strong>Payload</strong>：攻击载荷。它主要用于建立攻击者和受害者机器直接的连接，Metasploit有超过 500个有效攻击载荷。</p>
+<p><strong>Module</strong>：模块是一个完整的构件，每个模块执行特定的任务，并通过几个模块组成一个单元运行。这种架构的好处是可以很容易的将自己写的利用程序和工具集成到框架中。</p>
+<p>Metasploit框架具有模块化的体系结构，exploits、payload、encoders都是独立的模块：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-8ef2c5c1eab17053a3824c1b534a02d7_720w.jpg" alt="img"></p>
+<p>Metasploit提供两种不同的UI，msfconsole和WebUI，本书中主要使用msfconsole接口。因为msfconsole对Metasploit支持最好，可以使用所有功能。</p>
+<p>1、<strong>在Windows上安装Metasploit</strong></p>
+<p>在Windows上安装Metasploit非常简单，直接从官方下载(<a href="https://link.zhihu.com/?target=http://www.metasploit.com/download">http://www.metasploit.com/download</a>).安装文件进行安装即可。</p>
+<p><strong>准备工作</strong></p>
+<p>Metasploit的四个版本：</p>
+<p><strong>Pro</strong>：适用于渗透测试人员和IT安全团队</p>
+<p><strong>Express</strong>：适用于一般IT人员</p>
+<p><strong>Community</strong>：适用于小公司和学生</p>
+<p><strong>Framework</strong>：适用于开发人员和安全研究人员</p>
+<p>请从官网下载最新版的 Metasploit Framework</p>
+<p>（<a href="https://link.zhihu.com/?target=https://windows.metasploit.com/metasploitframework-latest.msi">https://windows.metasploit.com/metasploitframework-latest.msi</a>） 它包含控制台程序和其他依赖程序。</p>
+<p><strong>如何安装</strong></p>
+<p>下载完之后，运行即可，它将自动安装相关所有组件。</p>
+<p><img src="https://pic1.zhimg.com/80/v2-ed42b180951a8ebbf5dba6dc5991f370_720w.jpg" alt="img"></p>
+<p><img src="https://pic4.zhimg.com/80/v2-77b0b01e63b78bcd272dd56c4f201ef3_720w.jpg" alt="img"></p>
+<p><img src="https://pic1.zhimg.com/80/v2-a3a55ace357c0e131e09ed17b1392a38_720w.jpg" alt="img"></p>
+<p><img src="https://pic2.zhimg.com/80/v2-be7ce69e0f1dd8c166e5c06bfec73551_720w.jpg" alt="img"></p>
+<p><img src="https://pic3.zhimg.com/80/v2-a2b19a24056ae033f9801e58c8721af6_720w.jpg" alt="img"></p>
+<p>Tip：在Windows上安装Metasploit时候，应该禁用防护软件，因为可能会检测到一些安装文件为恶意程序，从而阻止安装过程。安装完后将 Metasploit加入到防护软件的白名单。</p>
+<p>2、<strong>在Linux和MacOS上安装Metasploit</strong></p>
+<p>通过以下快速安装脚本导入Rapid7签名密钥并为受支持的Linux和macOS系统设置程序包：</p>
+<ol>
+<li><code>curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb &gt; msfinstall &amp;&amp; \</code></li>
+<li><code>chmod 755 msfinstall &amp;&amp; \</code></li>
+<li><code>./msfinstall</code></li>
+</ol>
+<p>软件包将集成到系统的包管理器中，可以使用 msfupdate 命令或包管理器进行更新。</p>
+<p>安装过程差不多是这样的：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">bcook@localhost:~$ uname -a</span><br><span class="line">Linux localhost 3.14.0 #1 SMP PREEMPT Mon Feb 6 21:59:30 PST 2017 armv7l armv7l armv7l GNU/Linux</span><br><span class="line">bcook@localhost:~$ curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb &gt; msfinstall &amp;&amp; \</span><br><span class="line">&gt;   chmod 755 msfinstall &amp;&amp; \</span><br><span class="line">&gt;   ./msfinstall</span><br><span class="line">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">100  5394  100  5394    0     0   5609      0 --:--:-- --:--:-- --:--:--  5607</span><br><span class="line">Switching to root user to update the package</span><br><span class="line">[sudo] password for bcook: </span><br><span class="line">Adding metasploit-framework to your repository list..OK</span><br><span class="line">Updating package cache..OK</span><br><span class="line">Checking for and installing update..</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree      </span><br><span class="line">Reading state information... Done</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  metasploit-framework</span><br><span class="line">0 upgraded, 1 newly installed, 0 to remove and 2 not upgraded.</span><br><span class="line">Need to get 148 MB of archives.</span><br><span class="line">After this operation, 358 MB of additional disk space will be used.</span><br><span class="line">Get:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid/main armhf metasploit-framework armhf 4.13.23+20170217143300.git.1.85dca6a~1rapid7-1 [148 MB]</span><br><span class="line">Fetched 148 MB in 19s (7743 kB/s)                                                                                                    </span><br><span class="line">Selecting previously unselected package metasploit-framework.</span><br><span class="line">(Reading database ... 28449 files and directories currently installed.)</span><br><span class="line">Preparing to unpack .../metasploit-framework_4.13.23+20170217143300.git.1.85dca6a~1rapid7-1_armhf.deb ...</span><br><span class="line">Unpacking metasploit-framework (4.13.23+20170217143300.git.1.85dca6a~1rapid7-1) ...</span><br><span class="line">Setting up metasploit-framework (4.13.23+20170217143300.git.1.85dca6a~1rapid7-1) ...</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfbinscan to provide /usr/bin/msfbinscan (msfbinscan) in auto mode</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfconsole to provide /usr/bin/msfconsole (msfconsole) in auto mode</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfd to provide /usr/bin/msfd (msfd) in auto mode</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfdb to provide /usr/bin/msfdb (msfdb) in auto mode</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfelfscan to provide /usr/bin/msfelfscan (msfelfscan) in auto mode</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfmachscan to provide /usr/bin/msfmachscan (msfmachscan) in auto mode</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfpescan to provide /usr/bin/msfpescan (msfpescan) in auto mode</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfrop to provide /usr/bin/msfrop (msfrop) in auto mode</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfrpc to provide /usr/bin/msfrpc (msfrpc) in auto mode</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfrpcd to provide /usr/bin/msfrpcd (msfrpcd) in auto mode</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfupdate to provide /usr/bin/msfupdate (msfupdate) in auto mode</span><br><span class="line">update-alternatives: using /opt/metasploit-framework/bin/msfvenom to provide /usr/bin/msfvenom (msfvenom) in auto mode</span><br><span class="line">Run msfconsole to get started</span><br><span class="line">W: --force-yes is deprecated, use one of the options starting with --allow instead.</span><br><span class="line">bcook@localhost:~$ msfconsole  //启动msfconsole</span><br><span class="line"> ** Welcome to Metasploit Framework Initial Setup **</span><br><span class="line">    Please answer a few questions to get started.</span><br><span class="line">Would you like to use and setup a new database (recommended)? y //是否设置数据库</span><br><span class="line">Creating database at /home/bcook/.msf4/db</span><br><span class="line">Starting database at /home/bcook/.msf4/db...success</span><br><span class="line">Creating database users</span><br><span class="line">Creating initial database schema</span><br><span class="line"> ** Metasploit Framework Initial Setup Complete **</span><br><span class="line">       =[ metasploit v4.13.23-dev-584850f1f8a1a74b69b5cea16c700c9fd1b8e4c6]</span><br><span class="line">+ -- --=[ 1622 exploits - 924 auxiliary - 282 post        ]</span><br><span class="line">+ -- --=[ 472 payloads - 39 encoders - 9 nops             ]</span><br><span class="line">+ -- --=[ Free Metasploit Pro trial: http://r-7.co/trymsp ]</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p>在MacOS中手动安装Metasploit</p>
+<p>最新的OS X安装程序包也可以直接在这里下载：<a href="https://link.zhihu.com/?target=https://osx.metasploit.com/metasploitframework-latest.pkg">https://osx.metasploit.com/metasploitframework-latest.pkg</a></p>
+<p>下载完后安装即可，安装完后，使用/opt/metasploit-framework/bin/msfconsole启动msfconsole。</p>
+<p>3、<strong>在Kali Linux上使用Metasploit</strong></p>
+<p>Kali Linux是最受安全从业人员欢迎的操作系统，第一、它预装了几乎所有流行的渗透测试工具，降低了使用成本，其次它是基于Linux的操作系统，具有可靠的稳定性和安全性。</p>
+<p><strong>准备工作</strong></p>
+<p>你可以在物理机上安装Kali Linux，也可以在虚拟机中安装它，安装过程非常简单。</p>
+<p>在Kali Linux设置Metasploit开发环境可以用以下命令：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">sudo apt update </span><br><span class="line">sudo apt -y install autoconf bison build-essential curl git-core libapr1</span><br><span class="line">libaprutil1 libcurl4-openssl-dev libgmp3-dev libpcap-dev libpq-dev</span><br><span class="line">libreadline6-dev libsqlite3-dev libssl-dev libsvn1 libtool libxml2 libxml2-</span><br><span class="line">dev libxslt-dev libyaml-dev locate ncurses-dev openssl postgresql</span><br><span class="line">postgresql-contrib wget xsel zlib1g zlib1g-dev</span><br><span class="line">curl -sSL https://rvm.io/mpapis.asc | gpg --import -</span><br><span class="line">curl -L https://get.rvm.io | bash -s stable</span><br><span class="line">source ~/.rvm/scripts/rvm</span><br><span class="line">cd /opt</span><br><span class="line">sudo git clone https://github.com/rapid7/metasploit-framework.git</span><br><span class="line">sudo chown -R `whoami` /opt/metasploit-framework</span><br><span class="line">cd metasploit-framework</span><br><span class="line">rvm --install $(cat .ruby-version)</span><br><span class="line">gem install bundler</span><br><span class="line">bundle install</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>如何安装</strong></p>
+<p>你可以从Kali官网下载（<a href="https://link.zhihu.com/?target=https://www.kali.org">https://www.kali.org</a>）Kali Linux ISO镜像文件，用来制作USB启动盘或者制作DVD-ROM光盘。你可以将Kali Linux安装到硬盘上或者直接使用 Live CD模式。也可以在虚拟机中安装Kali Linux。</p>
+<p>本书中，我们将使用 Kali Linux 虚拟机。</p>
+<p>1、从官网下载 Kali Vmware 虚拟机文件，导入到Vmware Workstation中，启动系统，输入用户名和密码即可登录到Kali中，root默认密码是toor。</p>
+<p>2、成功登录后，直接从 应用程序 菜单中启动 Metasploit</p>
+<p><img src="https://pic3.zhimg.com/80/v2-1f30abedd89d438ede6f9369c90b606a_720w.jpg" alt="img"></p>
+<p>Tip：从应用程序菜单启动 Metasploit后，将自动设置PostgreSQL数据库，它将创建数据库用户，创建msf和msf_test数据库，配置Metasploit使用数据库，并通过以下命令启动msfconsole：（这是自动的，不需要手动执行下面的命令）</p>
+<ol>
+<li><code>service postgresql start &amp;&amp; msfdb init &amp;&amp; msfconsole</code></li>
+</ol>
+<p>过程如下：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-d288f2572f683f534f743df750b7fecd_720w.jpg" alt="img"></p>
+<p><strong>其他</strong></p>
+<p>或者你可以直接在终端中运行msfconsole启动Metasploit</p>
+<p>3、<strong>升级Kali Linux</strong></p>
+<p>升级Kali Linux非常简单，建议定期升级以获得最新的安全更新。若要升级，可以使用 apt update，然后使用 apt upgrade进行升级，这种方法是在不删除任何包的情况下升级已安装的包。如果要升级大的版本和重要更新。可以使用apt full-upgrade进行完全升级，这种方式将会删除过时的软件包和安装新的依赖。</p>
+<p>4、<strong>构建渗透测试实验环境</strong></p>
+<p>构建一个渗透测试实验环境是非常有必要的。它允许你在一个安全的环境中练习和测试，因为直接针对真实系统攻击测试是违法的。使用虚拟机构建渗透测试实验环境具有可移植性，灵活性和低维护成本。并且可以构建多种操作系统，设置复杂的网络场景，并在多个目标上执行渗透测试。</p>
+<p><strong>准备工作</strong></p>
+<p>选择你喜欢的虚拟化软件，比如 Vmware Workstation、VirtualBox、Hyper-V等</p>
+<p>我们需要构建的渗透测试实验环境拓扑如下：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-c6a545ab88f3d843e350b629f757781c_720w.jpg" alt="img"></p>
+<p>包含 Kali Linux，Linux服务器和Windows服务器以及一台Windows 10客户机。</p>
+<p>当然你可以根据自己的喜好来构建。</p>
+<p><strong>如何构建</strong></p>
+<p><strong>Kali Linux</strong>：直接从Kali官网下载安装就行</p>
+<p><strong>Linux服务器</strong>：可以从 SourceForge下载 Metasploitable2 ： <a href="https://link.zhihu.com/?target=https://sourceforge.net/projects/">https://sourceforge.net/projects/</a> metasploitable/files/Metasploitable2/</p>
+<p><strong>Windows 10 客户机</strong>：可以从微软开发者网站下载 90天评估版： <a href="https://link.zhihu.com/?target=https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/">https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/</a></p>
+<p><strong>Windows Server</strong>：我们通过Metasploitable 3来构建。在Windows上运行build_win2008.sh进行构建。</p>
+<p>Metasploitable 3 安装过程在此不做描述</p>
+<p>构建过程不做详细描述</p>
+<p>2、<strong>配置SSH连接</strong></p>
+<p><strong>准备工作</strong></p>
+<p>要配置远程登录Kali Linux，首先我们需要更改默认的root密码并生成新的SSH密钥。</p>
+<p><strong>怎么做</strong></p>
+<p>使用passwd命令修改root密码</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root@osboxes:~# passwd</span><br><span class="line">Enter new UNIX password: </span><br><span class="line">Retype new UNIX password: </span><br><span class="line">passwd: password updated successfully</span><br><span class="line">root@osboxes:~#  </span><br></pre></td></tr></table></figure>
+
+<p>重新配置SSH主机密钥非常简单，首先删除当前的SSH主机密钥，然后使用dpkg-reconfigure openssh-server命令重新生成密钥即可。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root@osboxes:~# rm /etc/ssh/ssh_host_*</span><br><span class="line">root@osboxes:~# dpkg-reconfigure openssh-server </span><br><span class="line">Creating SSH2 RSA key; this may take some time ...</span><br><span class="line">2048 SHA256:1FN10l0k50Ng/dpeLIXTPmFGyupZB22hk4JNQC1aKcI root@osboxes (RSA)</span><br><span class="line">Creating SSH2 ECDSA key; this may take some time ...</span><br><span class="line">256 SHA256:37c9q4AwOW4wEwUoEpQ1Jz/KXIYJfV53ORWeGBzONdI root@osboxes (ECDSA)</span><br><span class="line">Creating SSH2 ED25519 key; this may take some time ...</span><br><span class="line">256 SHA256:ky1bOQlbMFIMB0si0w7Msv32fpSeza6lZeHn8OevGdU root@osboxes (ED25519)</span><br><span class="line">rescue-ssh.target is a disabled or a static unit, not starting it. </span><br></pre></td></tr></table></figure>
+
+<p>我们还需要编辑OpenSSH服务配置文件：/etc/ssh/sshd_config，将#PermitRootLogin without-password 更改为PermitRootLogin yes，从而运行root远程登录。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-184191be210a627532bd0f69c4942aff_720w.jpg" alt="img"></p>
+<p>若要设置SSH服务开机启动，则执行systemctl enable ssh即可</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root@osboxes:~# systemctl enable ssh</span><br><span class="line">Synchronizing state of ssh.service with SysV service script with /lib/systemd/systemd-sysv-install.</span><br><span class="line">Executing: /lib/systemd/systemd-sysv-install enable ssh</span><br><span class="line">Created symlink /etc/systemd/system/sshd.service → /lib/systemd/system/ssh.service.</span><br></pre></td></tr></table></figure>
+
+<p>Tip:最好是将远程登录配置为密钥登录，而不是使用密码。</p>
+<p>7、<strong>使用SSH连接到Kali</strong></p>
+<p>要连接到Kali Linux，我们只需要使用SSH客户端即可，大多数Unix，Linux和MacOS都已经安装了SSH客户端。如果使用的是Windows，可以安装PuTTY等SSH客户端软件。、</p>
+<p><strong>怎么做</strong></p>
+<p>查看Kali的IP地址</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root@osboxes:~# ip a </span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 ::1/128 scope host </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000</span><br><span class="line">    link/ether 00:0c:29:9f:99:bf brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 192.168.177.138/24 brd 192.168.177.255 scope global dynamic noprefixroute eth0</span><br><span class="line">       valid_lft 1784sec preferred_lft 1784sec</span><br><span class="line">    inet6 fe80::28ff:605:ed51:4ab7/64 scope link noprefixroute </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
+
+<p>使用SSH 客户端连接到Kali</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">λ ssh root@192.168.177.138</span><br><span class="line">The authenticity of host &#x27;192.168.177.138 (192.168.177.138)&#x27; can&#x27;t be established.</span><br><span class="line">ECDSA key fingerprint is SHA256:37c9q4AwOW4wEwUoEpQ1Jz/KXIYJfV53ORWeGBzONdI.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br><span class="line">Warning: Permanently added &#x27;192.168.177.138&#x27; (ECDSA) to the list of known hosts.</span><br><span class="line">root@192.168.177.138&#x27;s password:</span><br><span class="line">Linux osboxes 4.14.0-kali3-amd64 #1 SMP Debian 4.14.12-2kali1 (2018-01-08) x86_64</span><br><span class="line">The programs included with the Kali GNU/Linux system are free software;</span><br><span class="line">the exact distribution terms for each program are described in the</span><br><span class="line">individual files in /usr/share/doc/*/copyright.</span><br><span class="line">Kali GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent</span><br><span class="line">permitted by applicable law.</span><br><span class="line">Linux osboxes 4.14.0-kali3-amd64 #1 SMP Debian 4.14.12-2kali1 (2018-01-08) x86_64</span><br><span class="line">The programs included with the Kali GNU/Linux system are free software;</span><br><span class="line">the exact distribution terms for each program are described in the</span><br><span class="line">individual files in /usr/share/doc/*/copyright.</span><br><span class="line">Kali GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent</span><br><span class="line">permitted by applicable law.</span><br><span class="line">root@osboxes:~# </span><br></pre></td></tr></table></figure>
+
+<p>8、<strong>配置PostgreSQL数据库</strong></p>
+<p>Metasploit的一个重要特性是支持PostgreSQL数据库，使用它来存储渗透测试结果和漏洞信息。</p>
+<p><strong>准备工作</strong></p>
+<p>启动服务，然后使用 Metasploit msfdb 初始化数据库</p>
+<p><strong>怎么做</strong></p>
+<p>1、启动数据库</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root@osboxes:~# systemctl start postgresql</span><br></pre></td></tr></table></figure>
+
+<p>2、初始化数据库</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">~# msfdb init</span><br><span class="line">Creating database user &#x27;msf&#x27;</span><br><span class="line">Enter password for new role:</span><br><span class="line">Enter it again:</span><br><span class="line">Creating databases &#x27;msf&#x27; and &#x27;msf_test&#x27;</span><br><span class="line">Creating configuration file in /usr/share/metasploit-framework/config/database.yml</span><br><span class="line">Creating initial database schema </span><br></pre></td></tr></table></figure>
+
+<p>msfdb 还可以用来管理Metasploit Framework数据库</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root@osboxes:~# msfdb                                              </span><br><span class="line">Manage the metasploit framework database                          </span><br><span class="line">  msfdb init     # start and initialize the database              </span><br><span class="line">  msfdb reinit   # delete and reinitialize the database            </span><br><span class="line">  msfdb delete   # delete database and stop using it              </span><br><span class="line">  msfdb start    # start the database                              </span><br><span class="line">  msfdb stop     # stop the database                              </span><br><span class="line">  msfdb status   # check service status                            </span><br><span class="line">  msfdb run      # start the database and run msfconsole          </span><br></pre></td></tr></table></figure>
+
+<p>3、修改数据库配置文件</p>
+<p>我们可以直接编辑 database.yml文件，文件位于/usr/share/metasploit-framework/config/database.yml</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root@osboxes:~# cat /usr/share/metasploit-framework/config/database.yml  </span><br><span class="line">development:                                                             </span><br><span class="line">  adapter: postgresql                                                    </span><br><span class="line">  database: msf                                                          </span><br><span class="line">  username: msf                                                          </span><br><span class="line">  password: 9JHbuu/CdoGT0kvBiSXf+VLDRQ9dKKpMYyWKY6Ui2jc=                 </span><br><span class="line">  host: localhost                                                        </span><br><span class="line">  port: 5432                                                             </span><br><span class="line">  pool: 5                                                                </span><br><span class="line">  timeout: 5                                                             </span><br><span class="line">production:                                                              </span><br><span class="line">  adapter: postgresql                                                    </span><br><span class="line">  database: msf                                                          </span><br><span class="line">  username: msf                                                          </span><br><span class="line">  password: 9JHbuu/CdoGT0kvBiSXf+VLDRQ9dKKpMYyWKY6Ui2jc=                 </span><br><span class="line">  host: localhost                                                        </span><br><span class="line">  port: 5432                                                             </span><br><span class="line">  pool: 5                                                                </span><br><span class="line">  timeout: 5                                                             </span><br><span class="line">test:                                                                    </span><br><span class="line">  adapter: postgresql                                                    </span><br><span class="line">  database: msf_test                                                     </span><br><span class="line">  username: msf                                                          </span><br><span class="line">  password: 9JHbuu/CdoGT0kvBiSXf+VLDRQ9dKKpMYyWKY6Ui2jc=                 </span><br><span class="line">  host: localhost                                                        </span><br><span class="line">  port: 5432                                                             </span><br><span class="line">  pool: 5                                                                </span><br><span class="line">  timeout: 5                                                             </span><br></pre></td></tr></table></figure>
+
+<p>里面的usrname和password是默认配置的，你可以根据自己的喜好进行更改</p>
+<p>4、确定是否连接到数据库</p>
+<p>启动msfconsole，然后执行db_status，检查数据库连接情况。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; db_status</span><br><span class="line">[*] postgresql connected to msf</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p>更多</p>
+<p>如果要手动连接到数据库，可以使用如下命令：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">db_connect &lt;user:pass&gt;@&lt;host:port&gt;/&lt;database&gt;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以使用databse.yml文件测试db_connect命令</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; db_disconnect //断开连接</span><br><span class="line">msf &gt; db_status //查看连接状态</span><br><span class="line">[*] postgresql selected, no connection</span><br><span class="line">msf &gt; db_connect</span><br><span class="line">[*]    Usage: db_connect &lt;user:pass&gt;@&lt;host:port&gt;/&lt;database&gt;</span><br><span class="line">[*]       OR: db_connect -y [path/to/database.yml]</span><br><span class="line">[*] Examples:</span><br><span class="line">[*]        db_connect user@metasploit3</span><br><span class="line">[*]        db_connect user:pass@192.168.0.2/metasploit3</span><br><span class="line">[*]        db_connect user:pass@192.168.0.2:1500/metasploit3</span><br><span class="line">msf &gt; db_connect -y /usr/share/metasploit-framework/config/database.yml //连接数据库</span><br><span class="line">[*] Rebuilding the module cache in the background...</span><br><span class="line">msf &gt; db_status //查看连接状态</span><br><span class="line">[*] postgresql connected to msf</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p>9、<strong>创建工作区</strong></p>
+<p>Metasploit中有工作区的概念，可以用来隔离不同的渗透测试任务，从而避免混淆不同的测试。</p>
+<p><strong>怎么做</strong></p>
+<p>1、默认工作区</p>
+<p>默认工作区是default，输入workspace查看</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; workspace</span><br><span class="line">* default</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p>输入workspace -h 查看命令帮助</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; workspace -h</span><br><span class="line">Usage:</span><br><span class="line">    workspace                  List workspaces</span><br><span class="line">    workspace -v               List workspaces verbosely</span><br><span class="line">    workspace [name]           Switch workspace</span><br><span class="line">    workspace -a [name] ...    Add workspace(s)</span><br><span class="line">    workspace -d [name] ...    Delete workspace(s)</span><br><span class="line">    workspace -D               Delete all workspaces</span><br><span class="line">    workspace -r &lt;old&gt; &lt;new&gt;   Rename workspace</span><br><span class="line">    workspace -h               Show this help information</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、新建工作区</p>
+<p>使用workspace -a命令添加新的工作区</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; workspace -a book</span><br><span class="line">[*] Added workspace: book</span><br><span class="line">msf &gt; workspace</span><br><span class="line">  default</span><br><span class="line">* book</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、删除工作区</p>
+<p>使用workspace -d命令删除工作区</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; workspace -d book</span><br><span class="line">[*] Deleted workspace: book</span><br><span class="line">[*] Switched workspace: default</span><br></pre></td></tr></table></figure>
+
+<p>4、更改工作区</p>
+<p>使用workspace命令更改工作区</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; workspace book</span><br><span class="line">[*] Workspace: book</span><br></pre></td></tr></table></figure>
+
+<p>5、重命名工作区</p>
+<p>使用workspace -r命令更改工作区</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; workspace -r book msf</span><br><span class="line">[*] Switched workspace: msf</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p>10、<strong>使用数据库</strong></p>
+<p>配置完数据库，我们就可以使用它了，首先我们了解如何使用db_import导入外部工具数据。</p>
+<p><strong>准备工作</strong></p>
+<p>在msfconsole中运行db_import命令，查看支持的文件类型</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; db_import                                                                            </span><br><span class="line">Usage: db_import &lt;filename&gt; [file2...]                                                      </span><br><span class="line">Filenames can be globs like *.xml, or **/*.xml which will search recursively                </span><br><span class="line">Currently supported file types include:                                                     </span><br><span class="line">    Acunetix                                                                                </span><br><span class="line">    Amap Log                                                                                </span><br><span class="line">    Amap Log -m                                                                            </span><br><span class="line">    Appscan                                                                                </span><br><span class="line">    Burp Session XML                                                                        </span><br><span class="line">    Burp Issue XML                                                                          </span><br><span class="line">    CI                                                                                      </span><br><span class="line">    Foundstone                                                                              </span><br><span class="line">    FusionVM XML                                                                            </span><br><span class="line">    ...                                                              </span><br><span class="line">    Wapiti XML                                                                              </span><br><span class="line">msf &gt;                                                                                      </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>怎么做</strong></p>
+<p>1、导入nmap扫描结果</p>
+<p>先完成扫描，保存结果为 XML 文档</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root@osboxes:~# nmap -Pn -A -oX report 192.168.177.139</span><br></pre></td></tr></table></figure>
+
+<p>2、然后执行 db_import PATH进行导入</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; db_import /root/report</span><br><span class="line">[*] Importing &#x27;Nmap XML&#x27; data</span><br><span class="line">[*] Import: Parsing with &#x27;Nokogiri v1.8.5&#x27;</span><br><span class="line">[*] Importing host 192.168.177.139</span><br><span class="line">[*] Successfully imported /root/report</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、当然也可以直接在msfconsole中运行dbnmap进行扫描，这样结果就直接保存到当前数据库中了，dbnmap 命令的参数与nmap 命令相同。</p>
+<p>11、<strong>使用 hosts 命令</strong></p>
+<p>既然数据库中有了数据，就可以使用hosts命令来显示当前工作区中存储的所有主机了。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; hosts</span><br><span class="line">Hosts</span><br><span class="line">=====</span><br><span class="line">address          mac                name  os_name  os_flavor  os_sp  purpose  info  comments</span><br><span class="line">-------          ---                ----  -------  ---------  -----  -------  ----  --------</span><br><span class="line">192.168.177.139  00:0c:29:c6:a9:e5        Unknown                    device</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>怎么做</strong></p>
+<p>1、查看命令帮助hosts -h</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; hosts -h</span><br><span class="line">Usage: hosts [ options ] [addr1 addr2 ...]</span><br><span class="line">OPTIONS:</span><br><span class="line">  -a,--add          Add the hosts instead of searching</span><br><span class="line">  -d,--delete       Delete the hosts instead of searching</span><br><span class="line">  -c &lt;col1,col2&gt;    Only show the given columns (see list below)</span><br><span class="line">  -C &lt;col1,col2&gt;    Only show the given columns until the next restart (see list below)</span><br><span class="line">  -h,--help         Show this help information</span><br><span class="line">  -u,--up           Only show hosts which are up</span><br><span class="line">  -o &lt;file&gt;         Send output to a file in csv format</span><br><span class="line">  -O &lt;column&gt;       Order rows by specified column number</span><br><span class="line">  -R,--rhosts       Set RHOSTS from the results of the search</span><br><span class="line">  -S,--search       Search string to filter by</span><br><span class="line">  -i,--info         Change the info of a host</span><br><span class="line">  -n,--name         Change the name of a host</span><br><span class="line">  -m,--comment      Change the comment of a host</span><br><span class="line">  -t,--tag          Add or specify a tag to a range of hosts</span><br><span class="line">Available columns: address, arch, comm, comments, created_at, cred_count, detected_arch, exploit_attempt_count, host_detail_count, info, mac, name, note_count, os_family, os_flavor, os_lang, os_name, os_sp, purpose, scope, service_count, state, updated_at, virtual_host, vuln_count, tags</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p>12、<strong>理解 services 命令</strong></p>
+<p>services命令作用是显示目标主机上可用的服务</p>
+<p>查看命令帮助：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; services -h</span><br><span class="line">Usage: services [-h] [-u] [-a] [-r &lt;proto&gt;] [-p &lt;port1,port2&gt;] [-s &lt;name1,name2&gt;] [-o &lt;filename&gt;] [addr1 addr2 ...]</span><br><span class="line">  -a,--add          Add the services instead of searching</span><br><span class="line">  -d,--delete       Delete the services instead of searching</span><br><span class="line">  -c &lt;col1,col2&gt;    Only show the given columns</span><br><span class="line">  -h,--help         Show this help information</span><br><span class="line">  -s &lt;name1,name2&gt;  Search for a list of service names</span><br><span class="line">  -p &lt;port1,port2&gt;  Search for a list of ports</span><br><span class="line">  -r &lt;protocol&gt;     Only show [tcp|udp] services</span><br><span class="line">  -u,--up           Only show services which are up</span><br><span class="line">  -o &lt;file&gt;         Send output to a file in csv format</span><br><span class="line">  -O &lt;column&gt;       Order rows by specified column number</span><br><span class="line">  -R,--rhosts       Set RHOSTS from the results of the search</span><br><span class="line">  -S,--search       Search string to filter by</span><br><span class="line">Available columns: created_at, info, name, port, proto, state, updated_at</span><br></pre></td></tr></table></figure>
+
+<p><strong>怎么做</strong></p>
+<p>1、显示所有可用服务</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; services</span><br><span class="line">Services</span><br><span class="line">========</span><br><span class="line">host             port  proto  name         state  info</span><br><span class="line">----             ----  -----  ----         -----  ----</span><br><span class="line">192.168.177.142  22    tcp    ssh          open   OpenSSH 5.3p1 Debian 3ubuntu4 Ubuntu Linux; protocol 2.0</span><br><span class="line">192.168.177.142  80    tcp    http         open   Apache httpd 2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1</span><br><span class="line">192.168.177.142  139   tcp    netbios-ssn  open   Samba smbd 3.X - 4.X workgroup: WORKGROUP</span><br><span class="line">192.168.177.142  143   tcp    imap         open   Courier Imapd released 2008</span><br><span class="line">192.168.177.142  443   tcp    ssl/https    open</span><br><span class="line">192.168.177.142  445   tcp    netbios-ssn  open   Samba smbd 3.X - 4.X workgroup: WORKGROUP</span><br><span class="line">192.168.177.142  5001  tcp    java-rmi     open   Java RMI</span><br><span class="line">192.168.177.142  8080  tcp    http         open   Apache Tomcat/Coyote JSP engine 1.1</span><br><span class="line">192.168.177.142  8081  tcp    http         open   Jetty 6.1.25</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、过滤服务</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; services -s http</span><br><span class="line">Services</span><br><span class="line">========</span><br><span class="line">host             port  proto  name  state  info</span><br><span class="line">----             ----  -----  ----  -----  ----</span><br><span class="line">192.168.177.142  80    tcp    http  open   Apache httpd 2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1</span><br><span class="line">192.168.177.142  8080  tcp    http  open   Apache Tomcat/Coyote JSP engine 1.1</span><br><span class="line">192.168.177.142  8081  tcp    http  open   Jetty 6.1.25</span><br></pre></td></tr></table></figure>
+
+<p>3、过滤端口</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; services -p 22</span><br><span class="line">Services</span><br><span class="line">========</span><br><span class="line">host             port  proto  name  state  info</span><br><span class="line">----             ----  -----  ----  -----  ----</span><br><span class="line">192.168.177.142  22    tcp    ssh   open   OpenSSH 5.3p1 Debian 3ubuntu4 Ubuntu Linux; protocol 2.0</span><br><span class="line">msf &gt;</span><br></pre></td></tr></table></figure>
+
+<p>4、搜索特定字符</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; services -S Apache</span><br><span class="line">Services</span><br><span class="line">========</span><br><span class="line">host             port  proto  name  state  info</span><br><span class="line">----             ----  -----  ----  -----  ----</span><br><span class="line">192.168.177.142  80    tcp    http  open   Apache httpd 2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1</span><br><span class="line">192.168.177.142  8080  tcp    http  open   Apache Tomcat/Coyote JSP engine 1.1</span><br></pre></td></tr></table></figure>
+
+<p>5、多条件过滤</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">msf &gt; services -c name,port,info -S Apache 192.168.177.142</span><br><span class="line">Services</span><br><span class="line">========</span><br><span class="line">host             name  port  info</span><br><span class="line">----             ----  ----  ----</span><br><span class="line">192.168.177.142  http  80    Apache httpd 2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1</span><br><span class="line">192.168.177.142  http  8080  Apache Tomcat/Coyote JSP engine 1.1</span><br></pre></td></tr></table></figure>
+
+<p>Tip：在后续的章节我们将学习更多的数据库命令，比如 loot、cred、vulns、notes。</p>
+<p>本章完</p>
+<p><strong>相关操作学习</strong></p>
+<p>Metasploit之PostgreSQL及Scanner实践:通过该实验学会metasploit与postgresql的配合使用，metasploit中主机扫描模块的使用以及集成的web应用扫描框架使用，数据库和扫描器的配合使用。</p>
+<p><a href="https://link.zhihu.com/?target=http://www.hetianlab.com/expc.do?ec=ECID62bc-07d5-4138-a540-e5e7a8aebb51">实验:PostgreSQL及Scanner实践(合天网安实验室)</a></p>
+<p><img src="https://pic4.zhimg.com/80/v2-14cb0c4ecbf5000ec16f99f36d084273_720w.jpg" alt="img"></p>
+<p><strong>说明</strong></p>
+<p>本文由合天网安实验室编译，转载请注明来源。</p>
+<p><strong>关于合天网安实验室</strong></p>
+<p>合天网安实验室（<a href="https://link.zhihu.com/?target=http://www.hetianlab.com">http://www.hetianlab.com</a>）-国内领先的实操型网络安全在线教育平台,真实环境，在线实操学网络安全 ； 实验内容涵盖：系统安全，软件安全，网络安全，Web安全，移动安全，CTF，取证分析，渗透测试，网安意识教育等。</p>
+]]></content>
+      <categories>
+        <category>Metasploit</category>
+      </categories>
+      <tags>
+        <tag>激动</tag>
+      </tags>
+  </entry>
 </search>
