@@ -140,7 +140,7 @@
 <p>原创：合天网安实验室合天智汇</p>
 <p>在本章中，我们将会学习以下内容：</p>
 <p>1、在Windows上安装Metasploit</p>
-<p>2、在Linux和MacOS上安装Metasploit</p>
+<p>2、在Linux和MacOS上安装Metasploit<span id="more"></span></p>
 <p>3、在Kali Linux中使用 Metasploit</p>
 <p>4、升级Kali Linux</p>
 <p>5、使用虚拟化软件构建渗透测试实验环境</p>
