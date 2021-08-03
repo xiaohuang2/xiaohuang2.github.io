@@ -184,7 +184,7 @@
 <p>Tip：在Windows上安装Metasploit时候，应该禁用防护软件，因为可能会检测到一些安装文件为恶意程序，从而阻止安装过程。安装完后将 Metasploit加入到防护软件的白名单。</p>
 <p>2、<strong>在Linux和MacOS上安装Metasploit</strong></p>
 <p>通过以下快速安装脚本导入Rapid7签名密钥并为受支持的Linux和macOS系统设置程序包：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb &gt; msfinstall &amp;&amp; \</span><br><span class="line">chmod 755 msfinstall &amp;&amp; \</span><br><span class="line">./msfinstall</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb &gt; msfinstall &amp;&amp; \</span><br><span class="line">chmod 755 msfinstall &amp;&amp; \</span><br><span class="line">./msfinstall</span><br></pre></td></tr></table></figure>
 
 <p>软件包将集成到系统的包管理器中，可以使用 msfupdate 命令或包管理器进行更新。</p>
 <p>安装过程差不多是这样的：</p>
