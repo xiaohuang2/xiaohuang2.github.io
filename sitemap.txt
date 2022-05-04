@@ -1,0 +1,12 @@
+https://example.com/tags/index.html
+https://example.com/categories/index.html
+https://example.com/about/index.html
+https://example.com/archives/index.html
+https://example.com/search/index.html
+https://example.com/2022/04/10/han-shu-de-zeng-jian-qi-ou/
+https://example.com/2022/04/10/bo-ke-dan-sheng-zhi-chu-de-jiu-ji-da-keng/
+https://example.com/
+https://example.com/tags/%E5%87%BD%E6%95%B0/
+https://example.com/tags/blog/
+https://example.com/categories/%E6%95%B0%E5%AD%A6/
+https://example.com/categories/%E9%9A%8F%E7%AC%94/
