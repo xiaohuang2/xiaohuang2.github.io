@@ -3,26 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>此博客诞生前的究极大坑 | Xiaohuang2&#39;s Math World</title>
+    <title>“自己对有关 k^p 求和的证明” | Xiaohuang2&#39;s Math World</title>
     
     
-        <meta name="keywords" content="blog" />
+        <meta name="keywords" content="数学分析,大学" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="我的数学博客建好了，我也不打算加什么花里胡哨的东西了。 但在这个博客正常运行前，我踩了个超级大坑，自己都觉得好笑。 我一直部署，却发现 public 文件夹里没有 index.html 。 后来还查了半天资料才发现，我把博客初始化时自带的 hello_world 文章删掉了！ 没有文章是不能完整生成静态文件的！ 这个问题耽误了我好长时间。。。 我觉悟的地方：https:&#x2F;&#x2F;www.zhihu.co">
+    <meta name="description" content="引言最近入手了张筑生先生的《数学分析新讲》，好像是去年重新版过了，看网上有人说，北大出版社总算做了一回好事. 在预备知识阶段有个证明： $\sum\limits^{n}\limits_{k&#x3D;1}{k^p}$ 可以表示成 $n$ 的 $p+1$ 次多项式，其最高次项系数为 $\frac{1}{p+1}$ ，常数项为 $0$ ,即  \sum\limits^{n}\limits_{k&#x3D;1}{k^p}&#x3D;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="此博客诞生前的究极大坑">
-<meta property="og:url" content="https://example.com/2022/04/10/bo-ke-dan-sheng-zhi-chu-de-jiu-ji-da-keng/index.html">
+<meta property="og:title" content="“自己对有关 k^p 求和的证明”">
+<meta property="og:url" content="https://example.com/2022/09/03/zi-ji-dui-you-guan-k-p-qiu-he-de-zheng-ming/index.html">
 <meta property="og:site_name" content="Xiaohuang2&#39;s Math World">
-<meta property="og:description" content="我的数学博客建好了，我也不打算加什么花里胡哨的东西了。 但在这个博客正常运行前，我踩了个超级大坑，自己都觉得好笑。 我一直部署，却发现 public 文件夹里没有 index.html 。 后来还查了半天资料才发现，我把博客初始化时自带的 hello_world 文章删掉了！ 没有文章是不能完整生成静态文件的！ 这个问题耽误了我好长时间。。。 我觉悟的地方：https:&#x2F;&#x2F;www.zhihu.co">
+<meta property="og:description" content="引言最近入手了张筑生先生的《数学分析新讲》，好像是去年重新版过了，看网上有人说，北大出版社总算做了一回好事. 在预备知识阶段有个证明： $\sum\limits^{n}\limits_{k&#x3D;1}{k^p}$ 可以表示成 $n$ 的 $p+1$ 次多项式，其最高次项系数为 $\frac{1}{p+1}$ ，常数项为 $0$ ,即  \sum\limits^{n}\limits_{k&#x3D;1}{k^p}&#x3D;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2022/05/03/XoqaP35zwRs7KZf.jpg">
-<meta property="article:published_time" content="2022-04-10T05:04:21.000Z">
-<meta property="article:modified_time" content="2022-05-03T04:57:37.558Z">
+<meta property="article:published_time" content="2022-09-03T08:54:46.000Z">
+<meta property="article:modified_time" content="2022-09-03T10:40:24.943Z">
 <meta property="article:author" content="xiaohuang2">
-<meta property="article:tag" content="blog">
+<meta property="article:tag" content="数学分析">
+<meta property="article:tag" content="大学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/05/03/XoqaP35zwRs7KZf.jpg">
     
 
     
@@ -253,22 +252,22 @@
                          <ul class="unstyled" id="tree" >  <li class="file"><a href="/2022/01/29/markdown-ji-chu-yu-fa/">Markdown 基础语法</a></li>  <li class="file"><a href="/2022/07/14/aplayer-metingjs-pjax-quan-ju-yin-le/">Aplayer（Metingjs）+Pjax全局音乐</a></li>  </ul> 
                     </li> 
                     
-                    <li class="directory">
-                        <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
-                            &nbsp;
-                            数学
-                        </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2022/04/10/han-shu-de-zeng-jian-qi-ou/">函数的增、减、奇、偶性质分析</a></li>  <li class="file"><a href="/2022/05/08/hui-zong-zhong-xue-jie-duan-jie-zhi-gao-zhong-bi-xiu-er-suo-you-lei-xing-han-shu/">汇总中学阶段所有类型的函数（一）</a></li>  <li class="file"><a href="/2022/05/28/hui-zong-zhong-xue-jie-duan-de-suo-you-han-shu-er/">汇总中学阶段所有类型的函数（二）</a></li>  <li class="file"><a href="/2022/07/06/zheng-xian-ding-li-zai-yuan-zhong-de-xiang-guan-zheng-ming/">正弦定理的值在圆中的证明</a></li>  <li class="file"><a href="/2022/07/27/yi-dao-yong-dao-zheng-chu-de-chu-deng-shu-lun-ti/">一道用到整除的初等数论题</a></li>  <li class="file"><a href="/2022/09/03/zi-ji-dui-you-guan-k-p-qiu-he-de-zheng-ming/">“自己对有关 k^p 求和的证明”</a></li>  </ul> 
-                    </li> 
-                    
                     <li class="directory open">
                         <a href="#" data-role="directory">
                             <i class="fa fa-folder-open"></i>
                             &nbsp;
+                            数学
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2022/04/10/han-shu-de-zeng-jian-qi-ou/">函数的增、减、奇、偶性质分析</a></li>  <li class="file"><a href="/2022/05/08/hui-zong-zhong-xue-jie-duan-jie-zhi-gao-zhong-bi-xiu-er-suo-you-lei-xing-han-shu/">汇总中学阶段所有类型的函数（一）</a></li>  <li class="file"><a href="/2022/05/28/hui-zong-zhong-xue-jie-duan-de-suo-you-han-shu-er/">汇总中学阶段所有类型的函数（二）</a></li>  <li class="file"><a href="/2022/07/06/zheng-xian-ding-li-zai-yuan-zhong-de-xiang-guan-zheng-ming/">正弦定理的值在圆中的证明</a></li>  <li class="file"><a href="/2022/07/27/yi-dao-yong-dao-zheng-chu-de-chu-deng-shu-lun-ti/">一道用到整除的初等数论题</a></li>  <li class="file active"><a href="/2022/09/03/zi-ji-dui-you-guan-k-p-qiu-he-de-zheng-ming/">“自己对有关 k^p 求和的证明”</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
                             随笔
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="/2022/04/10/bo-ke-dan-sheng-zhi-chu-de-jiu-ji-da-keng/">此博客诞生前的究极大坑</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2022/04/10/bo-ke-dan-sheng-zhi-chu-de-jiu-ji-da-keng/">此博客诞生前的究极大坑</a></li>  </ul> 
                     </li> 
                      </ul> 
     </div>
@@ -427,7 +426,7 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><article id="post-博客诞生之初的究极大坑" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-自己对有关k-p求和的证明" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -438,20 +437,20 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+        <a class="article-category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/blog/" rel="tag">blog</a>
+        <a class="tag-link-link" href="/tags/%E5%A4%A7%E5%AD%A6/" rel="tag">大学</a>, <a class="tag-link-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a>
     </div>
 
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2022/04/10/bo-ke-dan-sheng-zhi-chu-de-jiu-ji-da-keng/">
-            <time datetime="2022-04-10T05:04:21.000Z" itemprop="datePublished">2022-04-10</time>
+        <a href="/2022/09/03/zi-ji-dui-you-guan-k-p-qiu-he-de-zheng-ming/">
+            <time datetime="2022-09-03T08:54:46.000Z" itemprop="datePublished">2022-09-03</time>
         </a>
     </div>
 
@@ -463,7 +462,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            此博客诞生前的究极大坑
+            “自己对有关 k^p 求和的证明”
         </h1>
     
 
@@ -474,15 +473,52 @@
         
         
             
+                <div id="toc" class="toc-article">
+                    <strong class="toc-title">文章目录</strong>
+                    
+                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">证明过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87"><span class="toc-number">2.1.</span> <span class="toc-text">知识储备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E8%A1%A8%E8%BE%BE%E6%96%B9%E5%BC%8F"><span class="toc-number">2.1.1.</span> <span class="toc-text">二项式定理表达方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97-sum-limits-n-limits-k-1-k-p-k-1-p"><span class="toc-number">2.1.2.</span> <span class="toc-text">计算$\sum\limits^{n}\limits_{k&#x3D;1}{(k^p-(k-1)^p)}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#k-p-k-1-p-%E6%98%AF%E5%A4%9A%E5%B0%91"><span class="toc-number">2.1.3.</span> <span class="toc-text">$(k^p-(k-1)^p)$是多少</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%BC%8F%E8%AF%81%E6%98%8E"><span class="toc-number">2.2.</span> <span class="toc-text">正式证明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">3.</span> <span class="toc-text">结语</span></a></li></ol>
+                    
+                </div>
+              
         
         
-            <p>我的数学博客建好了，我也不打算加什么花里胡哨的东西了。</p>
-<p>但在这个博客正常运行前，我踩了个超级大坑，自己都觉得好笑。</p>
-<p>我一直部署，却发现 public 文件夹里没有 index.html 。</p>
-<p>后来还查了半天资料才发现，我把博客初始化时自带的 hello_world 文章删掉了！</p>
-<p>没有文章是不能完整生成静态文件的！</p>
-<p>这个问题耽误了我好长时间。。。</p>
-<p><strong>我觉悟的地方：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/35964327">https://www.zhihu.com/question/35964327</a></strong></p>
+            <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>最近入手了张筑生先生的《数学分析新讲》，好像是去年重新版过了，看网上有人说，北大出版社总算做了一回好事.</p>
+<p>在预备知识阶段有个证明：</p>
+<p>$\sum\limits^{n}\limits_{k=1}{k^p}$ 可以表示成 $n$ 的 $p+1$ 次多项式，其最高次项系数为 $\frac{1}{p+1}$ ，常数项为 $0$ ,即</p>
+<script type="math/tex; mode=display">
+\sum\limits^{n}\limits_{k=1}{k^p}=\frac1{p+1}n^{p+1}+c_1n^p+c_2n^{p-1}+\cdots+c_pn.</script><p>其中$c_1,\cdots,c_p$都是可以算出来的系数.</p>
+<p>我边翻前面的提示，边划来划去，终于粗略地证出来了. 在这儿记录一下.</p>
+<h1 id="证明过程"><a href="#证明过程" class="headerlink" title="证明过程"></a>证明过程</h1><p>First, 我们要有几个知识储备.</p>
+<h2 id="知识储备"><a href="#知识储备" class="headerlink" title="知识储备"></a>知识储备</h2><h3 id="二项式定理表达方式"><a href="#二项式定理表达方式" class="headerlink" title="二项式定理表达方式"></a>二项式定理表达方式</h3><p>二项式定理可表示为：</p>
+<script type="math/tex; mode=display">
+(a+b)^n=\sum\limits^{n}\limits_{k=0}{n\choose k}a^{n-k}b^k</script><h3 id="计算-sum-limits-n-limits-k-1-k-p-k-1-p"><a href="#计算-sum-limits-n-limits-k-1-k-p-k-1-p" class="headerlink" title="计算$\sum\limits^{n}\limits_{k=1}{(k^p-(k-1)^p)}$"></a>计算$\sum\limits^{n}\limits_{k=1}{(k^p-(k-1)^p)}$</h3><script type="math/tex; mode=display">
+\sum\limits^{n}\limits_{k=1}{(k^p-(k-1)^p)}=(1^p-0^p)+(2^p-1^p)+\cdots+(n^p-(n-1)^p)=n^p.</script><h3 id="k-p-k-1-p-是多少"><a href="#k-p-k-1-p-是多少" class="headerlink" title="$(k^p-(k-1)^p)$是多少"></a>$(k^p-(k-1)^p)$是多少</h3><p>用二项式定理将 $(k-1)^p$ 进行处理.</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+k^p-(k-1)^p &= k^p-\sum\limits^{p}\limits_{i=0}{ {n\choose i} k^{n-i}(-1)^i} \\
+&= k^p-(k^p+\sum\limits^{p-1}\limits_{i=1}{ {n\choose i} k^{n-i}(-1)^i}+(-1)^p) \\
+&= -\sum\limits^{p-1}\limits_{i=1}{ {n\choose i}k^{n-i}(-1)^i}-(-1)^p
+\end{align*}</script><p>会发现 $p$ 的奇偶会影响 $(-1)^p$ 的取值，但这对我们整体的证明并没有太大关系.</p>
+<h2 id="正式证明"><a href="#正式证明" class="headerlink" title="正式证明"></a>正式证明</h2><script type="math/tex; mode=display">
+\begin{align*}
+\sum\limits^{n}\limits_{k=1}{(k^p-(k-1)^p)} &= \sum\limits^{n}\limits_{k=1}{\left(-\sum\limits^{p-1}\limits_{i=1}{ {n\choose i}k^{n-i}(-1)^i}-(-1)^p\right)} \\
+&= \sum\limits^{n}\limits_{k=1}{\left(pk^{p-1}-\sum\limits^{p-1}\limits_{i=2}{ {p \choose i}k^{p-i}(-1)^i}-(-1)^p\right)} \\
+&= p\sum\limits^{n}\limits_{k=1}{k^{p-1} }-\sum\limits^{n}\limits_{k=1}{\left(\sum\limits^{p-1}\limits_{i=2}{ {p \choose i}k^{p-i}(-1)^i}\right)}-\sum\limits^{n}\limits_{k=1}{(-1)^p}
+\end{align*}</script><p>即</p>
+<script type="math/tex; mode=display">
+n^p=p\sum\limits^{n}\limits_{k=1}{k^{p-1} }-\sum\limits^{n}\limits_{k=1}{\left(\sum\limits^{p-1}\limits_{i=2}{ {p \choose i}k^{p-i}(-1)^i}\right)}-\sum\limits^{n}\limits_{k=1}{(-1)^p}</script><p>移项，使得一边只剩下 $\sum\limits^{n}\limits_{k=1}k^{p-1}$.</p>
+<p>还要注意的是，$p$ 为奇数时，$(-1)^p=-1$，此时 $\sum\limits^{n}\limits_{k=1}{(-1)^p}=-n$.</p>
+<p>$p$ 为偶数时，$(-1)^p=1$，此时 $\sum\limits^{n}\limits_{k=1}{(-1)^p}=n$.</p>
+<p>我们简单一点，移过去之后就记为 $\plusmn n$.</p>
+<p>现在式子变为：</p>
+<script type="math/tex; mode=display">
+p\sum\limits^{n}\limits_{k=1}{k^{p-1} }=n^p+\sum\limits^{n}\limits_{k=1}{\left(\sum\limits^{p-1}\limits_{i=2}{ {p \choose i}k^{p-i}(-1)^i}\right)}\plusmn n</script><p>观察右边的中间项，如果展开应该有 $(p-1)-2+1=(p-2)$ 项. 则右边整个式子共有 $p$ 项.</p>
+<p>式子两边同时除以 $p(p\not ={0})$ 得：</p>
+<script type="math/tex; mode=display">
+\sum\limits^{n}\limits_{k=1}{k^{p-1} }=\frac1pn^p+\frac{\sum\limits^{n}\limits_{k=1}{\left(\sum\limits^{p-1}\limits_{i=2}{ {p \choose i}k^{p-i}(-1)^i}\right)} }p\plusmn\frac np</script><p>将 $p-1$ 用 $p$ 代替，则得：</p>
+<script type="math/tex; mode=display">
+\sum\limits^{n}\limits_{k=1}{k^{p} }=\frac1{p+1}n^{p+1}+\frac{\sum\limits^{n}\limits_{k=1}{\left(\sum\limits^{p}\limits_{i=2}{ {p+1 \choose i}k^{p+1-i}(-1)^i}\right)} }p\plusmn\frac n{p+1}</script><p>所求证即得证.</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>能自己证出来我还是有点小激动的，不过这才是刚刚半只脚跨进门槛，后面还有好长好长的路要走. 张筑生先生的这套书除了没有习题之外，几乎没有缺点. 更何况习题还可以用林源渠和方企勤的那本作补充.</p>
 
             </div>
         
@@ -495,19 +531,10 @@
     
 <nav id="article-nav">
     
-        <a href="/2022/04/10/han-shu-de-zeng-jian-qi-ou/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    函数的增、减、奇、偶性质分析
-                
-            </div>
-        </a>
     
-    
-        <a href="/2022/01/29/markdown-ji-chu-yu-fa/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2022/07/27/yi-dao-yong-dao-zheng-chu-de-chu-deng-shu-lun-ti/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Markdown 基础语法</div>
+            <div class="article-nav-title">一道用到整除的初等数论题</div>
         </a>
     
 </nav>
